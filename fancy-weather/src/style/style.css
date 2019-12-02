@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+.container {
+    position: relative;
+    max-width: 1255px;
+    min-width: 310px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+.outer-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/bg3.png");
+    background-size: cover;
+    z-index: 10;
+}
+
+.outer-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%); 
+    z-index: 5;
+}
+
+/*Header*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.header__control-buttons {
+    display: flex;
+}
+
+.control-button {
+    margin-left: 10px;
+}
+
+.control-buttons__refresh {
+    display: flex;
+    align-items: center;
+    background: rgba(180, 184, 187, 0.4);
+    border-radius: 5px;
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+
+.control-buttons__lang-switcher {
+    height: 42px;
+    overflow: hidden;
+}
+
+.lang {
+    padding: 13px 10px 10px;
+    background: rgba(174, 181, 185, 0.5);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.control-buttons__degree-switcher {
+    display: flex;
+    justify-content: baseline;
+    font-weight: bold;
+}
+
+.degree {
+    background: rgba(174, 181, 185, 0.5);
+    padding: 13px 15px 10px 12px;
+    cursor: pointer;
+}
+
+.degree_unactive {
+    background: rgba(76, 82, 85, 0.4);
+}
+
+.farenheit {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.cels {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.header__search-menu {
+    display: flex;
+}
+
+.search-menu__search-input {
+    height: 44px;
+    width: 270px;
+    background: rgba(76, 82, 85, 0.4);
+    border: 1px solid rgba(228, 227, 227, 0.2);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-menu__search-input::placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+    padding-left: 15px;
+}
+
+.search-menu__search-button {
+    height: 44px;
+    width: 100px;
+    background: rgba(174, 181, 185, 0.5);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+/*/Header*/
+
+/*main*/
+
+/*geolocation*/
+.geolocation {
+    margin-top: 57px;
+}
+
+.geolocation__country-name {
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 54px;
+    text-transform: uppercase;
+}
+
+.geolocation__date {
+    display: flex;
+}
+
+.date {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.time {
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+/*/geolocation*/
+
+.weather-information {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*present weather*/
+.weather__present-day-weather {
+    display: flex;
+    justify-content:  space-between;
+}
+
+.present-day-weather__degree {
+    font-size: 306px;
+    text-transform: uppercase;
+}
+
+.present-day-degree-circle {
+    position: relative;
+    font-size: 100px;
+    vertical-align: top;
+    z-index: 20;
+}
+
+.present-day-weather__information {
+    margin-left: 45px;
+    margin: auto 0 70px;
+}
+
+.present-day-weather__image-status {
+    position: absolute;
+    left: 270px;
+}
+
+.present-day-weather__inform {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 37px;
+    text-transform: uppercase;
+}
+/*/present weather*/
+.weather__other-days-weather {
+    display: flex;
+}
+
+.other-days-weather__weather:not(:first-child) {
+    margin-left: 51px;
+}
+
+.other-days-weather__header {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    text-transform: uppercase;
+}
+
+.other-days-weather__information {
+    display: flex;
+}
+
+.other-days-weather__inform {
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 98px;
+    text-transform: uppercase;
+}
+
+.other-days-weather__img img {
+    vertical-align: top;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+/*/other-days-weather*/
+
+/*map*/
+
+.map__map-picture img {
+    width: 375px;
+    border-radius: 50px;
+}
+
+.map__information {
+    margin-top: 20px;
+}
+
+.map-inform {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: right;
+    text-transform: capitalize;
+}
+/*/map*/
+
+/*/main*/
+
+/*media*/
+
+@media (max-width: 950px) {
+
+    .outer-wrapper {
+        height: 100%;
+    }
+
+    .main {
+        margin: 0 10px;
+    }
+
+    .geolocation {
+        text-align: center;
+    }
+
+    .geolocation__date {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .weather-information {
+        flex-direction: column;
+    }
+
+    .weather-information__weather {
+        margin: 0 auto;
+    }
+
+    .weather__present-day-weather {
+        justify-content: flex-start;
+    }
+
+    .present-day-weather__image-status {
+        left: 50%;
+    }
+
+    .weather-information__map {
+        text-align: center;
+    }
+
+    .map-inform {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .geolocation {
+        margin-top: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__search-menu {
+        margin-top: 15px;
+    }
+
+    .weather__present-day-weather {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .present-day-weather__image-status {
+        left: 70%;
+    }
+
+    .weather__other-days-weather {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .other-days-weather__weather {
+        margin-left: 0 !important;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .present-day-weather__degree {
+        font-size: 200px;
+    }
+
+    .present-day-weather__image-status {
+        left: 60%;
+    }
+
+    .present-day-weather__image-status img {
+        width: 90px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header__search-menu {
+        width: 70%;
+    }
+
+    .main {
+        margin: 0;
+    }
+
+    .date, .time {
+        font-size: 20px;
+    }
+
+    .map__map-picture img {
+        width: 280px;
+        padding: 10px;
+    }
+}
+/*/media*/
