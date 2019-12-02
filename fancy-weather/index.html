@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href ="dist/app.css" rel='stylesheet'> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Fancy weather</title>
+</head>
+<body>
+   <div class="outer-wrapper"> 
+    <header class="header container">
+        <ul class="header__control-buttons control-buttons">
+            <li class="control-buttons__refresh control-button">
+                <img src="src/img/refreshbut.svg" alt="refreshbut">
+            </li>
+            <li class="control-buttons__lang-switcher control-button">
+                <div class="lang">EN</div>
+                <div class="lang">RU</div>
+                <div class="lang">BY</div>
+            </li>
+            <li class="control-buttons__degree-switcher control-button">
+                <div class="degree farenheit degree_unactive">°F</div>
+                <div class="degree cels">°С</div>
+            </li>
+        </ul>
+
+        <div class="header__search-menu search-menu">
+            <input type="search" placeholder="Search city or ZIP" class="search-menu__search-input">
+            <button class="search-menu__search-button">Search</button>
+        </div>
+    </header>
+
+    <main class="main container">
+        <section class="geolocation">
+            <div class="geolocation__country-name">
+                Minsk, Belarus
+            </div>
+            <div class="geolocation__date">
+                <div class="date">
+                    Mon 28 October
+                </div>
+                <div class="time">
+                    17:23
+                </div>
+            </div>
+        </section>
+        
+        <section class="weather-information">
+            <div class="weather-information__weather weather">
+                <div class="weather__present-day-weather present-day-weather">
+                    <div class="present-day-weather__degree">
+                        10<span class="present-day-degree-circle">°</span>
+                    </div>
+                    <div class="present-day-weather__image-status">
+                            <img src="src/img/weatherpic1.svg" alt="weatherpic1">
+                    </div>
+                    <ul class="present-day-weather__information">
+                        <li class="present-day-weather__inform">OVERCAST</li>
+                        <li class="present-day-weather__inform">FEELS LIKE: 7</li>
+                        <li class="present-day-weather__inform">WIND: 2 m/s</li>
+                        <li class="present-day-weather__inform">HUMIDITY: 83%</li>
+                    </li>
+                </div>
+                <ul class="weather__other-days-weather other-days-weather">
+                    <li class="other-days-weather__weather">
+                        <div class="other-days-weather__header">
+                            TUESDAY
+                        </div>
+                        <ul class="other-days-weather__information">
+                            <li class="other-days-weather__inform">7°</li>
+                            <li class="other-days-weather__inform other-days-weather__img">
+                                <img src="src/img/weatherpic2.svg" alt="weatherpic3">
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="other-days-weather__weather">
+                        <div class="other-days-weather__header">
+                            WEDNESDAY
+                        </div>
+                        <ul class="other-days-weather__information">
+                            <li class="other-days-weather__inform">
+                                    6°
+                            </li>
+                            <li class="other-days-weather__inform other-days-weather__img">
+                                    <img src="src/img/weatherpic3.svg" alt="weatherpic1">
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="other-days-weather__weather">
+                        <div class="other-days-weather__header">
+                            THURSDAY
+                        </div>
+                        <ul class="other-days-weather__information">
+                            <li class="other-days-weather__inform">3°</li>
+                            <li class="other-days-weather__inform other-days-weather__img">
+                                <img src="src/img/weatherpic3.svg" alt="weatherpic1">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> 
+            <div class="weather-information__map map">
+                <div class="map__map-picture">
+                        <img src="src/img/google.png" alt="weatherpic3">
+                </div>
+                <div class="map__information">
+                    <div class="map-inform">Latitude: 53°54'</div>
+                    <div class="map-inform">Longitude: 27°34'</div>
+                </div>
+            </div>           
+        </section>
+    </main>
+    </div>
+</body>
+</html>
