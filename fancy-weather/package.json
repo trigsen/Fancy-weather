@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint src/js/file.js"
+    "lint": "eslint src/script/weather.js src/script/main.js src/script/geolocation.js"
   },
   "author": "",
   "license": "ISC",
