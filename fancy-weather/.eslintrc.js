@@ -12,5 +12,12 @@ module.exports = {
         "ecmaVersion": 2018
     },
     "rules": {
-    }
+    },
+	"parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+		}
+	}
 };
