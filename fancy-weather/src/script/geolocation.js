@@ -1,27 +1,30 @@
+import { getCountryName } from './countryCodes';
+import { startTimer, stopTimer } from './timer';
+
 export default class Geoloc {
-    constructor() {
+  async initialization() {
+    const response = await fetch('https://ipinfo.io/json?token=00e19059e33ce1');
+    const inform = await response.json();
+    window.localStorage.setItem('geolocationAPI', JSON.stringify(inform));
+  }
 
-    }
+  async addGeolocation() {
+    await this.initialization();
+    const geolocInform = JSON.parse(window.localStorage.getItem('geolocationAPI'));
 
-    async init() {
-        const response = await fetch('https://ipinfo.io/json?token=00e19059e33ce1');
-        const inform = await response.json();
-        window.localStorage.setItem('geolocationAPI', JSON.stringify(inform));
+    const country = document.querySelector('.geolocation__country-name');
+    country.innerHTML = `${geolocInform.city}, ${getCountryName(geolocInform.country)}`;
 
-        this.addGeolocation();
-    }
+    const date = new Date(Date.now());
+    const month = date.toLocaleString('en-EN', { weekday: 'short', day: 'numeric', month: 'long' });
+    const time = date.toLocaleString('ru-RU', { hour: '2-digit', minute: '2-digit' });
 
-    addGeolocation() {
-        const geolocInform = JSON.parse(window.localStorage.getItem('geolocationAPI'));
+    document.querySelector('.date').innerHTML = month;
+    document.querySelector('.time').innerHTML = time;
+    this.timer = startTimer();
+  }
 
-        const country = document.querySelector('.geolocation__country-name');
-        country.innerHTML = `${geolocInform.city}, ${geolocInform.country}`;
-
-        const date = new Date(Date.now());
-        const month = date.toLocaleString('en-EN', {weekday: 'short', day: 'numeric',  month: 'long'});
-        const time = date.toLocaleString('ru-RU', {hour: '2-digit', minute: '2-digit'});
-        
-        document.querySelector('.date').innerHTML = month;
-        document.querySelector('.time').innerHTML = time;
-    }
+  clearTimer() {
+    stopTimer(this.timer);
+  }
 }
