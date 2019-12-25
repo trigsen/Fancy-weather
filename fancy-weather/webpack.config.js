@@ -21,6 +21,11 @@ module.exports = {
         {
             test: /\.(png|jpg)/,
             use: 'url-loader'
+        },
+        {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: '/node_modules/'
         }]
     },
     devServer: {
