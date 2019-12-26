@@ -30,6 +30,7 @@ export default class Weather extends Coordinate {
   }
 
   async addWeather(place = null) {
+    await this.initialization(place);
     const weatherInform = JSON.parse(window.localStorage.getItem('weatherAPI'));
 
     function weatherInformFactory(index) {
@@ -65,10 +66,6 @@ export default class Weather extends Coordinate {
       const date = new Date(weatherInfObj.dayName);
       document.querySelector(`${selector}Header`).innerHTML = date.toLocaleString('en-EN', { weekday: 'long' });
     }
-
-
-    await this.initialization(place);
-
 
     const firstDayWeather = weatherInformFactory(0);
     const secondDayWeather = weatherInformFactory(10);

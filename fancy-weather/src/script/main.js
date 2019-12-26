@@ -8,12 +8,12 @@ import Picture from './picture';
   const geo = new Geoloc();
   geo.addGeolocation();
 
-  const weather = new Weather();
-  weather.addWeather();
-
   const map = new Map();
   map.initialization();
 
+  const weather = new Weather();
+  weather.addWeather();
+  
   const picture = new Picture();
   picture.initialization();
 
