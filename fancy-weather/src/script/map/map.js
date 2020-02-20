@@ -1,7 +1,7 @@
-import Coordinate from './coordinate';
-import { getCountryName } from './countryCodes';
-import { transliterate } from './cityNames';
-import { startTimer, stopTimer } from './timer';
+import Coordinate from '../coordinate/coordinate';
+import { getCountryName } from '../utils/countryCodes';
+import { transliterate } from '../utils/cityNames';
+import { startTimer, stopTimer } from '../timer/timer';
 
 export default class Map extends Coordinate {
   constructor() {
@@ -44,9 +44,9 @@ export default class Map extends Coordinate {
     if (cityName.includes('область')) {
       cityName = geolocInform.results[0].components.county;
     }
-
+    
     const country = document.querySelector('.geolocation__country-name');
-    country.innerHTML = `${transliterate(cityName)}, ${getCountryName(geolocInform.results[0].components.country_code.toUpperCase())}`;
+    country.innerHTML = `${cityName}, ${getCountryName(geolocInform.results[0].components.country_code.toUpperCase())}`;
 
     const localTimezone = new Date().getTimezoneOffset() * 60;
     const locationTimezoneOffset = geolocInform.results[0].annotations.timezone.offset_sec;

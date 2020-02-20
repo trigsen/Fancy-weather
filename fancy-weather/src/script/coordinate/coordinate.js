@@ -1,4 +1,4 @@
-import Geoloc from './geolocation';
+import Geoloc from '../geolocation/geolocation';
 
 export default class Coordinate extends Geoloc {
   async initialization(place) {
@@ -7,9 +7,9 @@ export default class Coordinate extends Geoloc {
       await super.initialization();
       const geolocInform = JSON.parse(window.localStorage.getItem('geolocationAPI'));
 
-      response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${geolocInform.city}&key=914e121a2d0e4667a13ded44b8be1b8f`);
+      response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${geolocInform.city}&key=914e121a2d0e4667a13ded44b8be1b8f&language=en`);
     } else {
-      response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${place}&key=914e121a2d0e4667a13ded44b8be1b8f`);
+      response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${place}&key=914e121a2d0e4667a13ded44b8be1b8f&language=en`);
     }
 
     const inform = await response.json();

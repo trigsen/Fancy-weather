@@ -1,7 +1,7 @@
-import Geoloc from './geolocation';
-import Weather from './weather';
-import Map from './map';
-import Picture from './picture';
+import Geoloc from './geolocation/geolocation';
+import Weather from './weather/weather';
+import Map from './map/map';
+import Picture from './picture/picture';
 
 
 (function initDoc() {

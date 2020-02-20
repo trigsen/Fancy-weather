@@ -1,5 +1,5 @@
-import { getCountryName } from './countryCodes';
-import { startTimer, stopTimer } from './timer';
+import { getCountryName } from '../utils/countryCodes';
+import { startTimer, stopTimer } from '../timer/timer';
 
 export default class Geoloc {
   async initialization() {

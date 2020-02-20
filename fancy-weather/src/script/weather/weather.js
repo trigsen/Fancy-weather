@@ -1,4 +1,4 @@
-import Coordinate from './coordinate';
+import Coordinate from '../coordinate/coordinate';
 
 export default class Weather extends Coordinate {
   async initialization(place = null) {
