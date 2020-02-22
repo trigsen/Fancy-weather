@@ -18,6 +18,7 @@ export default class Weather extends Coordinate {
     try {
       let response;
       if (!place) {
+        cityName = cityName.split(' ')[0];
         response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&lang=en&units=metric&APPID=80b6e15849682d94ed9da21729aa095e`);
       } else {
         response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${place}&lang=en&units=metric&APPID=80b6e15849682d94ed9da21729aa095e`);
